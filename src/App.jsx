@@ -1,4 +1,5 @@
 import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 import './App.css'
 
 function App() {
@@ -8,9 +9,7 @@ function App() {
       
       {/* Hero section - lo creiamo dopo */}
       <div className="flex items-center justify-center h-screen">
-        <h1 className="text-4xl font-bold text-white">
-          Portfolio coming soon...
-        </h1>
+        <Hero />
       </div>
     </div>
   );
