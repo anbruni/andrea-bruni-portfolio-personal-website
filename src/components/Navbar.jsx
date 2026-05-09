@@ -1,4 +1,3 @@
-// Navbar.jsx - Header orizzontale con nome a sinistra e nav links a destra
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -7,10 +6,9 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className="px-8 py-6 flex justify-between items-center relative">
-      {/* Logo/Nome a sinistra */}
-      <div className="text-xl font-bold text-white">Andrea Bruni</div>
+      <div className="text-xl font-bold text-white font-heading">Andrea Bruni</div>
 
-      {/* Nav links a destra */}
+
       <div className="hidden md:flex gap-6">
         <a href="#contact" className="nav-link">
           Contact
@@ -34,7 +32,6 @@ function Navbar() {
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
-            {/* Header con X */}
             <div className="flex justify-end">
               <button
                 onClick={() => setIsMenuOpen(false)}

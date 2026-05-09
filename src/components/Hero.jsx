@@ -1,16 +1,19 @@
+import Button from './Button';
+import AnimatedRoles from './AnimatedRoles';
+
 function Hero() {
   return (
     <div className="flex flex-col items-center justify-center h-screen px-4">
-      {/* Headline temporanea */}
-      <h1 className="heading-1">
+      <h1 className="heading-1 max-w-2xl">
         Hey, I am Andrea Bruni, <br />
-        a Campaign Specialist
+        <span className="whitespace-nowrap">
+          a <AnimatedRoles />
+        </span>
       </h1>
-      
-      {/* Button temporaneo */}
-      <button className="btn-primary mt-8">
+
+      <Button variant="primary" className="mt-8">
         Download CV
-      </button>
+      </Button>
     </div>
   );
 }
