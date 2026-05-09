@@ -3,7 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Base styles */
+/* Custom base styles */
 @layer base {
   body {
     @apply m-0 antialiased;
@@ -12,15 +12,4 @@
   #root {
     @apply min-h-screen;
   }
-}
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
-}
-
-code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
 }
