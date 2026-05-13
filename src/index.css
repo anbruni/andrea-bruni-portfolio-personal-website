@@ -39,6 +39,11 @@
     @apply px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
   }
 
+  /* Back / Navigation Buttons */
+  .btn-back {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-white/20 text-slate-300 hover:text-white hover:border-white/50 hover:bg-white/10 transition-all duration-200 text-sm font-medium backdrop-blur-sm;
+  }
+
   /* Navigation Links */
   .nav-link {
     @apply text-slate-300 hover:text-white transition-colors duration-200;

@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar'
-import Hero from './components/Hero'
+import { Route, Routes } from 'react-router-dom';
 import Starfield from './components/Starfield';
+import HomePage from './pages/HomePage';
+import ContactsPage from './pages/ContactsPage';
 import './App.css'
 
 function App() {
@@ -8,9 +10,10 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900">
       <Starfield />
       <Navbar />
-      <div className="flex items-center justify-center h-screen">
-        <Hero />
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+      </Routes>
     </div>
   );
 }
