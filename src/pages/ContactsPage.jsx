@@ -73,7 +73,7 @@ function ContactsPage() {
       )}
 
       <h1 className="heading-1 mb-3">Get In Touch</h1>
-      <p className="subtitle mb-12">I'm always open to new opportunities and conversations.</p>
+      <p className="subtitle mb-12">I'm always open to new opportunities and conversations. I am located in Brno (Czech Republic) and available for remote work worldwide or on-site in Brno.</p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full mb-16">
         {contacts.map((contact) => (
