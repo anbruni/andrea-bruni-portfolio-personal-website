@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
 import { ArrowLeft, Phone, Mail, Globe, GitBranch, Bot, Send } from 'lucide-react';
 
 const contacts = [
@@ -59,8 +58,7 @@ function ContactCard({ icon: Icon, label, value, href, external }) {
   );
 }
 
-function ContactsPage() {
-    const location = useLocation();
+function ContactsPage({ location }) {
     const isHome = location.pathname === '/';
   return (
     <div className="min-h-screen flex flex-col items-start justify-center px-6 md:px-10 pb-24 pt-0 md:pt-10 md:pb-24 relative z-10 max-w-5xl mx-auto">

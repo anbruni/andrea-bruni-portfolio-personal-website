@@ -11,7 +11,7 @@ function Hero({ onScrollToAbout }) {
                 </span>
             </h1>
 
-            <Button variant="primary" className="mt-8">
+            <Button variant="primary" className="mt-8" href="/cv.html" target="_blank" rel="noopener noreferrer">
                 Download CV
             </Button>
             <Button variant="secondary" className="mt-8" onClick={onScrollToAbout}>
