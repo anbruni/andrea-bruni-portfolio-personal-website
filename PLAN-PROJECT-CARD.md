@@ -9,7 +9,7 @@
 **Step 1 — Aggiungere lo screenshot al progetto**
 Fai uno screenshot del sito bouldergarage.it (intera pagina o solo hero), salvalo in `public/` con un nome pulito tipo `boulder-garage-preview.jpg`.
 
-*Perché `public/`?* Tutto ciò che metti in `public/` viene servito da Vite direttamente come file statico. Per referenziarlo nel codice usi il path `/boulder-garage-preview.jpg` — nessun import necessario.
+_Perché `public/`?_ Tutto ciò che metti in `public/` viene servito da Vite direttamente come file statico. Per referenziarlo nel codice usi il path `/boulder-garage-preview.jpg` — nessun import necessario.
 
 **Step 2 — Aggiungere i campi `screenshot` e `previewText` all'oggetto progetto in `WorkAndProjects.jsx`**
 Aggiungi due nuovi campi nel data object: `screenshot` (path dell'immagine) e `previewText` (un testo breve, 1-2 righe).
@@ -23,12 +23,13 @@ Tailwind usa il prefisso `hover:` per applicare stili al mouseover, es. `hover:s
 
 **Step 4 — Aggiungere il glow alla carta in `ProjectCard.jsx`**
 Sul `div` principale della carta aggiungi:
+
 - `transition-all duration-300` → abilita la transizione CSS su tutte le proprietà modificate
 - `hover:shadow-[0_0_40px_rgba(99,102,241,0.3)]` → glow viola/indaco (puoi cambiare il colore)
 - `hover:-translate-y-1` → leggero lift verso l'alto
 - `cursor-pointer` → indica che è cliccabile
 
-*Perché `transition-all duration-300`?* Senza questa classe il cambio di stile sarebbe istantaneo. `transition-all` dice al browser di animare tutte le proprietà che cambiano, `duration-300` imposta la durata a 300ms.
+_Perché `transition-all duration-300`?_ Senza questa classe il cambio di stile sarebbe istantaneo. `transition-all` dice al browser di animare tutte le proprietà che cambiano, `duration-300` imposta la durata a 300ms.
 
 ---
 
@@ -46,11 +47,12 @@ Importa `useState` da React. Dichiara lo stato `isOpen`. Aggiungi `onClick={() =
 
 **Step 7 — Creare il file `src/components/ProjectModal.jsx`**
 Questo componente riceve via props: `screenshot`, `title`, `previewText`, `liveUrl`, `onClose`. Renderizza:
+
 - Un **overlay scuro** che copre tutto lo schermo (`fixed inset-0 bg-black/70 backdrop-blur-sm z-50`)
 - Una **finestra centrata** con l'immagine, il titolo, il testo e un link "Visit site"
 - Un **pulsante X** in alto a destra che chiama `onClose`
 
-*Perché `fixed inset-0`?* `fixed` toglie l'elemento dal flusso normale e lo posiziona rispetto alla viewport. `inset-0` è shorthand per `top:0 right:0 bottom:0 left:0` — copre tutto lo schermo.
+_Perché `fixed inset-0`?_ `fixed` toglie l'elemento dal flusso normale e lo posiziona rispetto alla viewport. `inset-0` è shorthand per `top:0 right:0 bottom:0 left:0` — copre tutto lo schermo.
 
 **Step 8 — Capire il rendering condizionale**
 In JSX puoi usare `{isOpen && <ProjectModal ... />}` per mostrare il modal solo quando `isOpen` è `true`. Quando `isOpen` diventa `false`, React rimuove il componente dal DOM.
@@ -68,7 +70,7 @@ Importa `ProjectModal` in `ProjectCard`. Aggiungilo nel JSX con rendering condiz
 **Step 11 — Aggiungere la chiusura con Escape in `ProjectModal`**
 Usa `useEffect` per aggiungere un listener su `keydown`. Se il tasto premuto è `'Escape'`, chiama `onClose`. Nel cleanup, rimuovi il listener con `removeEventListener`.
 
-*Perché il cleanup?* Se non rimuovi il listener quando il modal si chiude, continuerà ad esistere in memoria anche quando il componente non è più nel DOM — questo si chiama memory leak.
+_Perché il cleanup?_ Se non rimuovi il listener quando il modal si chiude, continuerà ad esistere in memoria anche quando il componente non è più nel DOM — questo si chiama memory leak.
 
 ---
 
@@ -80,6 +82,7 @@ Quando clicchi sulla finestra interna del modal, l'evento "risale" (bubble) fino
 ---
 
 ## Verifica finale
+
 - Hover sulla carta → vedi glow e lift
 - Click sulla carta → si apre il modal con screenshot
 - Click sull'overlay o X → si chiude
