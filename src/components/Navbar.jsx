@@ -21,6 +21,9 @@ function Navbar() {
         <Link to="/contacts" className="nav-link">
           Contact
         </Link>
+        <Link to="/work-projects" className="nav-link">
+          Work & Projects
+        </Link>
         <Link to="/download" className="nav-link">
           Download
         </Link>
@@ -53,6 +56,12 @@ function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </Link>
+            <Link to="/work-projects"
+              className="nav-link-mobile"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Work & Projects
             </Link>
             <Link
               to="/download"

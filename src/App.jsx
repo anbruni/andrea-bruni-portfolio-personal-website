@@ -1,14 +1,17 @@
 import Navbar from './components/Navbar'
 import { Route, Routes } from 'react-router-dom';
 import { useRef, useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Starfield from './components/Starfield';
 import HomePage from './pages/HomePage';
 import ContactsPage from './pages/ContactsPage';
+import WorkAndProjects from './pages/WorkAndProjects';
 import mountains from './assets/snow-mountains.png';
 import './App.css'
 
 
 function App() {
+  const location = useLocation();
   const aboutRef = useRef(null)
   const topRef = useRef(null);
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -42,7 +45,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage aboutRef={aboutRef} />} />
-        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/contacts" element={<ContactsPage location={location} />} />
+        <Route path="/work-projects" element={<WorkAndProjects location={location} />} />
       </Routes>
       {aboutTop > 0 && scrollPosition > aboutTop - window.innerHeight + 300 && (
         <button className="btn-secondary fixed bottom-8 left-8 z-50" onClick={scrollToTop}>

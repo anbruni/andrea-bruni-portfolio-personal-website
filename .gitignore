@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# CV source files (local only, not for deployment)
+andrea-bruni-cv/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Andrea Bruni — CV</title>
+<meta name="description" content="Andrea Bruni — Principal Online Marketing Specialist, Front-End Developer, Growth Engineer. Marketing automation, A/B testing, AI-assisted workflows." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f172a;
+    --muted: #64748b;
+    --accent: #2563eb;
+    --accent-soft: #dbeafe;
+    --line: #e2e8f0;
+    --bg: #eef2f7;
+    --sidebar-bg: #0f172a;
+    --sidebar-ink: #e2e8f0;
+    --sidebar-muted: #94a3b8;
+    --sidebar-accent: #60a5fa;
+  }
+  * { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    font-size: 9pt;
+    line-height: 1.35;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- A4 page ---------- */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.12);
+    display: grid;
+    grid-template-columns: 68mm 1fr;
+    overflow: hidden;
+  }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    background: var(--sidebar-bg);
+    color: var(--sidebar-ink);
+    padding: 9mm 7mm;
+    display: flex;
+    flex-direction: column;
+    gap: 4.5mm;
+  }
+  .sidebar h2 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 8.5pt;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    margin: 0 0 5px 0;
+    color: var(--sidebar-accent);
+    font-weight: 600;
+  }
+
+  .identity .name {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 18pt;
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.3px;
+    margin: 0 0 5px 0;
+    color: #fff;
+    white-space: nowrap;
+  }
+  .identity .role {
+    font-size: 9pt;
+    color: var(--sidebar-accent);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .identity .accent-bar {
+    width: 32px;
+    height: 3px;
+    background: var(--sidebar-accent);
+    border-radius: 2px;
+    margin-top: 7px;
+  }
+
+  .contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 8.3pt;
+    color: var(--sidebar-ink);
+  }
+  .contact-list li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    line-height: 1.25;
+    word-break: break-word;
+  }
+  .contact-list a { color: var(--sidebar-ink); text-decoration: none; }
+  .contact-list a:hover { color: var(--sidebar-accent); }
+  .ico {
+    width: 12px; height: 12px;
+    flex-shrink: 0;
+    color: var(--sidebar-accent);
+  }
+
+  .sidebar-section { display: flex; flex-direction: column; }
+
+  .skill-group { margin-bottom: 6px; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group .label {
+    font-size: 7.8pt;
+    color: var(--sidebar-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin-bottom: 3px;
+    font-weight: 500;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag {
+    background: rgba(96, 165, 250, 0.12);
+    color: #bfdbfe;
+    border: 1px solid rgba(96, 165, 250, 0.25);
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 7.6pt;
+    line-height: 1.3;
+    font-weight: 500;
+  }
+
+  .edu-entry { margin-bottom: 6px; }
+  .edu-entry:last-child { margin-bottom: 0; }
+  .edu-entry .school { font-weight: 600; font-size: 8.6pt; color: #fff; line-height: 1.25; }
+  .edu-entry .degree { font-size: 8pt; color: var(--sidebar-ink); margin-top: 1px; }
+  .edu-entry .meta { color: var(--sidebar-muted); font-size: 7.6pt; margin-top: 1px; }
+
+  .lang-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .lang-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.6pt;
+  }
+  .lang-row .lvl { color: var(--sidebar-accent); font-weight: 600; font-size: 8pt; }
+
+  /* ---------- Main column ---------- */
+  .main {
+    padding: 9mm 11mm;
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+  }
+  .main h2 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-size: 10pt;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    margin: 0 0 7px 0;
+    color: var(--ink);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .main h2::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--accent), transparent);
+  }
+
+  .summary p {
+    margin: 0;
+    font-size: 9pt;
+    line-height: 1.45;
+    color: #334155;
+  }
+  .summary strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- Experience timeline ---------- */
+  .timeline {
+    position: relative;
+    padding-left: 14px;
+    border-left: 2px solid var(--line);
+  }
+  .job {
+    position: relative;
+    margin-bottom: 9px;
+    padding-left: 4px;
+  }
+  .job:last-child { margin-bottom: 0; }
+  .job::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--accent-soft);
+  }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .job-title {
+    font-weight: 700;
+    font-size: 9.6pt;
+    color: var(--ink);
+  }
+  .job-company {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 9.6pt;
+  }
+  .job-meta {
+    color: var(--muted);
+    font-size: 8pt;
+    font-weight: 500;
+    white-space: nowrap;
+    background: #f1f5f9;
+    padding: 1px 8px;
+    border-radius: 10px;
+  }
+  .job ul {
+    margin: 4px 0 0 0;
+    padding-left: 16px;
+    color: #334155;
+  }
+  .job li { margin-bottom: 1px; font-size: 8.8pt; line-height: 1.38; }
+  .job li strong { color: var(--ink); font-weight: 600; }
+  .main > section.experience-wrap { flex: 1; display: flex; flex-direction: column; }
+  .main > section.experience-wrap .timeline { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+
+  /* ---------- Toolbar / Print ---------- */
+  .toolbar {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1000;
+  }
+  .btn {
+    background: var(--ink);
+    color: #fff;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.25);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform .15s ease, background .2s ease;
+  }
+  .btn:hover { background: var(--accent); transform: translateY(-1px); }
+  .btn svg { width: 16px; height: 16px; }
+
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; }
+    .toolbar { display: none !important; }
+    .page {
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      margin: 0;
+      box-shadow: none;
+      page-break-after: avoid;
+    }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button class="btn" onclick="window.print()" title="Save as PDF — choose 'Save as PDF' in the print dialog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<main class="page">
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="sidebar">
+
+    <div class="identity">
+      <h1 class="name">Andrea Bruni</h1>
+      <p class="role">Principal Online Marketing Specialist · Front-End Developer · Growth Engineer</p>
+      <div class="accent-bar"></div>
+    </div>
+
+    <section class="sidebar-section">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:your.email@example.com">andbr95@gmail.com</a>
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +420 778974161 <br />
+          +39 3342231606
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Brno, Czech Republic
+        </li>
+        <li>
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="www.linkedin.com/in/andrea-bruni-8b1b85138">www.linkedin.com/in/andrea-bruni-8b1b85138</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="sidebar-section">
+      <h2>Skills</h2>
+
+      <div class="skill-group">
+        <div class="label">Front-End & Engineering</div>
+        <div class="tags">
+          <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+          <span class="tag">Tailwind</span><span class="tag">Python</span>
+          <span class="tag">SQL</span><span class="tag">Git / GitHub</span>
+          <span class="tag">TypeScript (basics)</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">Marketing & Growth</div>
+        <div class="tags">
+          <span class="tag">A/B Testing</span><span class="tag">Experiment Design</span>
+          <span class="tag">Marketing Automation</span><span class="tag">Campaign Architecture</span>
+          <span class="tag">Conversion Optimization</span><span class="tag">Growth Engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">AI & Automation</div>
+        <div class="tags">
+          <span class="tag">AI Workflows</span><span class="tag">LangGraph</span>
+          <span class="tag">MCP</span><span class="tag">Prompt Engineering</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="label">Tools & Process</div>
+        <div class="tags">
+          <span class="tag">Figma</span><span class="tag">Jira</span><span class="tag">Confluence</span>
+          <span class="tag">Google Cloud (GCP)</span>
+          <span class="tag">Agile / Scrum</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h2>Education</h2>
+
+      <div class="edu-entry">
+        <div class="school">Masarykova univerzita</div>
+        <div class="degree">Ing. — M.Sc. Public Finance & Economics (Double Degree)</div>
+        <div class="meta">2020 – 2021 · Grade A</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="school">Università del Piemonte Orientale</div>
+        <div class="degree">M.Sc. Management & Business Economics</div>
+        <div class="meta">2019 – 2021 · 110/110 cum laude</div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="school">Università degli Studi di Torino</div>
+        <div class="degree">B.A. Linguistic & Cultural Mediation</div>
+        <div class="meta">2014 – 2018 · 100/110</div>
+      </div>
+    </section>
+
+    <section class="sidebar-section">
+      <h2>Languages</h2>
+      <ul class="lang-list">
+        <li class="lang-row"><span>Italian</span><span class="lvl">Native</span></li>
+        <li class="lang-row"><span>English</span><span class="lvl">C1</span></li>
+        <li class="lang-row"><span>Czech</span><span class="lvl">A2</span></li>
+      </ul>
+    </section>
+
+  </aside>
+
+  <!-- ============ MAIN ============ -->
+  <div class="main">
+
+    <section class="summary">
+      <h2>Profile</h2>
+      <p>
+        Senior, hands-on professional at the intersection of <strong>digital marketing, front-end engineering, and data analytics</strong>.
+        I design, build, and optimize large-scale, performance-driven campaigns across the full lifecycle —
+        from architecture and technical setup to A/B testing, deployment, monitoring, and conversion optimization.
+        Strong background in <strong>HTML, CSS, JavaScript</strong>, marketing automation, and
+        <strong>AI-assisted workflows</strong> (LangGraph, MCP) used to accelerate execution and improve quality.
+      </p>
+    </section>
+
+    <section class="experience-wrap">
+      <h2>Experience</h2>
+
+      <div class="timeline">
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Principal Online Marketing Specialist</span> · <span class="job-company">Gen</span></div>
+            <div class="job-meta">Jul 2025 – Present</div>
+          </div>
+          <ul>
+            <li>Own end-to-end design, technical execution, and optimization of scalable, high-impact digital campaigns.</li>
+            <li>Operate across marketing automation, front-end development, and data analysis with full lifecycle ownership.</li>
+            <li>Drive <strong>AI-assisted workflows</strong> and automation to increase efficiency, quality, and execution speed.</li>
+            <li>Partner with developers, QA, data analysts, and business stakeholders on complex, cross-functional initiatives.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Front-End Developer</span> · <span class="job-company">Gen</span></div>
+            <div class="job-meta">Aug 2023 – Present</div>
+          </div>
+          <ul>
+            <li>Build and maintain campaign components in <strong>HTML, CSS, JavaScript</strong>, ensuring performance, tracking readiness, and consistency.</li>
+            <li>Translate business and commercial requirements into scalable, maintainable front-end solutions.</li>
+            <li>Bridge campaign strategy, technical implementation, and data collection to enable faster iteration.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Senior Campaign Specialist</span> · <span class="job-company">Gen</span></div>
+            <div class="job-meta">Jul 2024 – Jul 2025</div>
+          </div>
+          <ul>
+            <li>Designed, executed, and evaluated structured <strong>A/B tests and experiments</strong> driving measurable performance gains.</li>
+            <li>Translated experimentation insights into campaign improvements with sales and business stakeholders.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Campaign Specialist</span> · <span class="job-company">Gen / Avast / NortonLifeLock</span></div>
+            <div class="job-meta">Sep 2021 – Jul 2024</div>
+          </div>
+          <ul>
+            <li>Led the migration of all Norton and Avira campaigns from the US team to the new Brno team — <strong>zero downtime</strong>, no critical issues.</li>
+            <li>First member of the new team: independently mastered internal systems and onboarded subsequent hires.</li>
+            <li>Owned technical setup, configuration, and monitoring of digital sales campaigns end to end.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="job-head">
+            <div><span class="job-title">Production Support Analyst</span> · <span class="job-company">FNZ Group</span></div>
+            <div class="job-meta">Mar 2019 – Sep 2019</div>
+          </div>
+          <ul>
+            <li>Issue management and resolution; supported testing and release process for production fixes.</li>
+            <li>Authored scripts in <strong>MS SQL Management Studio</strong> and Visual Studio.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</main>
+
+</body>
+</html>
