@@ -40,13 +40,21 @@ Deve poter comunicare opportunità e messaggi importanti a me in tempo reale.
 
 ## System Prompt (da costruire)
 
-Il cuore del bot. Deve includere:
+Il cuore del bot. Deve essere costruito a partire dalla knowledge base interna:
+
+- Fonte primaria: [AI-AGENT-KNOWLEDGE-BASE.md](AI-AGENT-KNOWLEDGE-BASE.md)
+- Usare solo informazioni marcate come `Verified`
+- Non presentare come fatti le sezioni `Needs confirmation`
+- Se un'informazione non e' nella knowledge base, il bot deve dichiarare che non e' confermata e invitare a contattarmi direttamente
+- Il bot deve essere trasparente: e' un assistente AI del portfolio, non Andrea in persona
+
+Deve includere:
 - Chi sono, cosa faccio, dove vivo
-- Stack tecnologico e anni di esperienza
-- Disponibilità per lavoro
-- Tono di voce (amichevole, diretto, professionale)
-- Cosa NON dire (info private, prezzi, ecc.)
-- FAQ con risposte predefinite
+- Stack tecnologico e anni di esperienza, solo quando verificati
+- Disponibilita' per lavoro e collaborazioni, solo quando aggiornata nella knowledge base
+- Tono di voce: amichevole, diretto, professionale, pratico
+- Guardrails: cosa il bot NON deve dire, inclusi dati privati, dettagli confidenziali, prezzi, salario, contratti e informazioni non confermate
+- FAQ con risposte predefinite derivate dalla knowledge base
 
 ---
 

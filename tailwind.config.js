@@ -17,6 +17,12 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
         heading: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
       },
+      keyframes: {
+        'fade-in': { from: { opacity: '0' }, to: { opacity: '1' } },
+      },
+      animation: {
+        'fade-in': 'fade-in 0.15s ease-out',
+      },
     },
   },
   plugins: [],
