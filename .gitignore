@@ -17,6 +17,7 @@ andrea-bruni-cv/
 
 # Plans and future improvements, not for deployment
 plans-portfolio/
+.playwright-mcp/
 
 # Editor directories and files
 .vscode/*
