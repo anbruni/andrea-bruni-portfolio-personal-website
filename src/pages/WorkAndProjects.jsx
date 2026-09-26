@@ -30,8 +30,8 @@ const projects = [
       'Official website for a new indoor bouldering gym in Cumiana, Italy.',
     overlayContent:
       'Developed with React and Tailwind CSS, following a mobile-first approach to ensure a flawless experience on any device. React Router manages dynamic routing — the site is a single-page application where each section is rendered on the fly when navigating through the navbar. Tailwind CSS handles all styling with a consistent design system. The homepage features a full-screen image carousel that auto-advances every 5 seconds. Deployed on Netlify with automatic builds on every push.',
-    overlayImage: 'public/boulder-garage-photo1.png',
-    overlayImage2: 'public/boulder-garage-photo2.png',
+    overlayImage: '/boulder-garage-photo1.png',
+    overlayImage2: '/boulder-garage-photo2.png',
   },
   {
     title: 'Helix — In-Product Campaign Automation',
