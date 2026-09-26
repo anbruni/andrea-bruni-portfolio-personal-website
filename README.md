@@ -1,98 +1,77 @@
-# Andrea Bruni - Personal Portfolio
+# Andrea Bruni | Portfolio
 
-A modern, animated portfolio website built with React while learning the framework from scratch.
+A personal portfolio website for presenting Andrea's professional profile, selected projects, education, and contact information. It brings campaign development, marketing automation, analytics, frontend work, and AI-assisted workflow projects together in one responsive website.
 
-## ✨ Features
+## Purpose
 
-- **Animated Role Switcher** - Dynamic text rotation with smooth transitions showcasing multiple professional roles
-- **Starfield Background** - Procedurally generated star field with 600+ stars for an immersive space theme
-- **Responsive Design** - Mobile-first approach with hamburger menu navigation
-- **Gradient Effects** - Multi-color gradients on animated text elements
-- **Modern Typography** - Custom font pairing (Space Grotesk for headlines, Inter for UI)
+The website has two goals:
 
-## 🛠️ Tech Stack
+- Give recruiters, collaborators, and clients a clear overview of Andrea's experience, skills, projects, and background.
+- Provide a practical project for building and improving a modern React application, including routing, reusable components, responsive layouts, and animation.
 
-- **React 19** - Latest React features with function components and hooks
-- **Vite** - Lightning-fast development server and build tool
-- **Tailwind CSS v3** - Utility-first CSS framework with custom design system
-- **Framer Motion** - Production-ready animation library for smooth transitions
-- **Lucide React** - Beautiful, consistent icon set
+## Website
 
-## 🚀 Getting Started
+The site includes:
 
-### Prerequisites
+- A home page with an animated introduction, CV link, and profile section.
+- A work and projects page with project descriptions, technology lists, and additional project details.
+- An education page covering academic degrees and results.
+- A contact page with email, phone, LinkedIn, and GitHub links.
+- Responsive desktop and mobile navigation, plus a decorative starfield background.
 
-- Node.js (v18 or higher)
-- npm or yarn
+## Built With
 
-### Installation
+- React 19 for the user interface and component-based structure.
+- Vite 8 for local development and production builds.
+- React Router for client-side page navigation.
+- Tailwind CSS 3 for responsive styling and utility classes, with custom styles in CSS files.
+- Framer Motion for interface transitions.
+- Lucide React for icons.
+- Inter and Space Grotesk fonts, loaded from Google Fonts.
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/react-leraning-and-exercise.git
-cd react-leraning-and-exercise
-```
+Most page content is stored directly in the React components. The site does not require a backend service to run locally.
 
-2. Install dependencies
+## Requirements
+
+- Node.js 20.19 or newer, or Node.js 22.12 or newer.
+- npm (included with Node.js).
+
+## Run Locally
+
+From the project directory, install dependencies and start the Vite development server:
+
 ```bash
 npm install
-```
-
-3. Start the development server
-```bash
 npm run dev
 ```
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser
+Open the local URL printed by Vite in the terminal, usually `http://localhost:5173`.
 
-## 📦 Build
+## Available Commands
 
-Create a production build:
 ```bash
-npm run build
+npm run dev      # Start the local development server
+npm run lint     # Check the project with ESLint
+npm run build    # Create a production build in dist/
+npm run preview  # Preview the production build locally
 ```
 
-Preview the production build:
-```bash
-npm run preview
-```
+To preview the production version, run `npm run build` first, then `npm run preview`.
 
-## 🎨 Design System
+## How It Is Organized
 
-- **Color Palette**: French Blue theme with dark gradient background
-- **Fonts**: 
-  - Space Grotesk (Headlines)
-  - Inter (Body & UI)
-- **Animations**: Framer Motion with custom timing curves
+The app is composed of page-level views and smaller reusable interface components. `App.jsx` sets up the routes and shared elements such as the navigation and background. Each page composes the components it needs, while Tailwind utilities and shared CSS classes provide the visual system and responsive behavior.
 
-## 🧩 Component Structure
-
-```
+```text
 src/
-├── components/
-│   ├── Navbar.jsx          # Responsive navigation with mobile menu
-│   ├── Hero.jsx            # Main hero section
-│   ├── AnimatedRoles.jsx   # Role rotation component with gradients
-│   ├── Starfield.jsx       # Procedural star field background
-│   └── Button.jsx          # Reusable button component
-├── App.jsx                 # Main app component
-└── index.css               # Global styles and Tailwind config
+├── components/       # Navigation, hero, project cards, starfield, and shared UI
+├── pages/            # Home, contacts, projects, and education pages
+├── App.jsx           # Shared app layout and route definitions
+├── App.css           # App-specific styles
+├── index.css         # Tailwind setup and reusable styles
+└── main.jsx          # React entry point
+public/
+└── cv.html           # CV page opened from the home page
 ```
 
-## 📚 Learning Goals
-
-This project was built to learn and practice:
-- React hooks (useState, useEffect, useMemo)
-- Component composition and props
-- Animation techniques with Framer Motion
-- Responsive design patterns
-- Modern CSS with Tailwind
-- Git workflow and version control
-
-## 📄 License
-
-MIT License - feel free to use this project for learning purposes.
-
----
-
-Built with ❤️ while learning React
+Project and education entries are maintained in their respective page files, making it straightforward to update portfolio content without a content-management service.
