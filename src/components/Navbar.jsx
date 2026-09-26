@@ -24,9 +24,12 @@ function Navbar() {
         <Link to="/work-projects" className="nav-link">
           Work & Projects
         </Link>
-        <Link to="/download" className="nav-link">
-          Download
+        <Link to="/courses-education" className="nav-link">
+          Courses & Education
         </Link>
+        <a href="/cv.html" target="_blank" rel="noopener noreferrer" className="nav-link">
+          Download
+        </a>
       </div>
       <button
         className="md:hidden text-white focus:outline-none"
@@ -38,9 +41,9 @@ function Navbar() {
         {isMenuOpen && (
           <motion.div
             className="absolute top-0 right-0 bg-white rounded-bl-3xl shadow-lg p-6 flex flex-col gap-4 md:hidden w-64 h-fit w-fit z-50"
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 20 }}
+            exit={{ opacity: 0, x: 0 }}
             transition={{ duration: 0.2, ease: 'easeOut' }}
           >
             <div className="flex justify-end">
@@ -64,12 +67,21 @@ function Navbar() {
               Work & Projects
             </Link>
             <Link
-              to="/download"
+              to="/courses-education"
+              className="nav-link-mobile"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Courses & Education
+            </Link>
+            <a
+              href="/cv.html"
+              target="_blank"
+              rel="noopener noreferrer"
               className="nav-link-mobile"
               onClick={() => setIsMenuOpen(false)}
             >
               Download
-            </Link>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
