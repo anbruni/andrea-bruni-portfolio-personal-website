@@ -15,6 +15,9 @@ dist-ssr
 # CV source files (local only, not for deployment)
 andrea-bruni-cv/
 
+# Plans and future improvements, not for deployment
+plans-portfolio/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
