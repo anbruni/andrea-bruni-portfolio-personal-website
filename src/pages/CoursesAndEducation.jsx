@@ -8,7 +8,8 @@ const education = [
     dates: '2020 – 2021',
     grade: 'Grade A',
     country: 'Brno - Czech Republic',
-    description: 'A double-degree master’s program in public finance and economics.',
+    description:
+      'A double-degree master’s program in public finance and economics.',
   },
   {
     institution: 'Università del Piemonte Orientale',
@@ -16,7 +17,8 @@ const education = [
     dates: '2019 – 2021',
     grade: '110/110 cum laude',
     country: 'Turin - Italy',
-    description: 'A master’s degree focused on management and business economics.',
+    description:
+      'A master’s degree focused on management and business economics.',
   },
   {
     institution: 'Università degli Studi di Torino',
@@ -28,24 +30,25 @@ const education = [
   },
 ];
 
-const courses = [
-  {
-    institution: 'FreeCodeCamp',
-    degree: 'Full Stack Web Development',
-    dates: '2022 – 2023',
-    grade: 'Completed',
-    country: 'Online',
-    description: 'Comprehensive online course covering full stack web development.',
-  },
-  {
-    institution: 'Coursera',
-    degree: 'Data Science Specialization',
-    dates: '2021 – 2022',
-    grade: 'Completed',
-    country: 'Online',
-    description: 'Series of courses focused on data science and analytics.',
-  },
-];
+// const courses = [
+//   {
+//     institution: 'FreeCodeCamp',
+//     degree: 'Full Stack Web Development',
+//     dates: '2022 – 2023',
+//     grade: 'Completed',
+//     country: 'Online',
+//     description:
+//       'Comprehensive online course covering full stack web development.',
+//   },
+//   {
+//     institution: 'Coursera',
+//     degree: 'Data Science Specialization',
+//     dates: '2021 – 2022',
+//     grade: 'Completed',
+//     country: 'Online',
+//     description: 'Series of courses focused on data science and analytics.',
+//   },
+// ];
 
 function CoursesAndEducation({ location }) {
   const isHome = location.pathname === '/';
@@ -58,58 +61,76 @@ function CoursesAndEducation({ location }) {
         </Link>
       )}
       <div className="flex flex-col md:gap-24 gap-12 w-full">
-      <section className="w-full">
-      <h1 className="heading-1 mb-3">Education</h1>
-      <p className="subtitle md:mb-12 mb-4">
-        Academic background in economics, management, and linguistic and cultural mediation.
-      </p>
+        <section className="w-full">
+          <h1 className="heading-1 mb-3">Education</h1>
+          <p className="subtitle md:mb-12 mb-4">
+            Academic background in economics, management, and linguistic and
+            cultural mediation.
+          </p>
 
-      <div className="flex flex-col gap-8 w-full">
-        {education.map((item) => (
-          <article key={item.institution} className="card-glow backdrop-blur-sm rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-            <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-              <div>
-                <h2 className="heading-2 mb-1">{item.institution}</h2>
-                <p className="text-slate-300 text-sm md:text-base">{item.degree}</p>
-              </div>
-              <p className="text-slate-400 text-sm md:text-right shrink-0">
-                {item.dates}<br />{item.grade}<br />{item.country}
-              </p>
-            </div>
-            <p className="mt-4 text-slate-200 text-sm md:text-base leading-relaxed">
-              {item.description}
-            </p>
-          </article>
-        ))}
+          <div className="flex flex-col gap-8 w-full">
+            {education.map((item) => (
+              <article
+                key={item.institution}
+                className="card-glow backdrop-blur-sm rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8"
+              >
+                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h2 className="heading-2 mb-1">{item.institution}</h2>
+                    <p className="text-slate-300 text-sm md:text-base">
+                      {item.degree}
+                    </p>
+                  </div>
+                  <p className="text-slate-400 text-sm md:text-right shrink-0">
+                    {item.dates}
+                    <br />
+                    {item.grade}
+                    <br />
+                    {item.country}
+                  </p>
+                </div>
+                <p className="mt-4 text-slate-200 text-sm md:text-base leading-relaxed">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* <section className="w-full">
+          <h1 className="heading-1 mb-3">Courses & skill improvement</h1>
+          <p className="subtitle md:mb-12 mb-4">
+            Online courses, tutorials, coding exercises and other resources for
+            skill improvement.
+          </p>
+
+          <div className="flex flex-col gap-8 w-full">
+            {courses.map((item) => (
+              <article
+                key={item.institution}
+                className="card-glow backdrop-blur-sm rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8"
+              >
+                <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
+                  <div>
+                    <h2 className="heading-2 mb-1">{item.institution}</h2>
+                    <p className="text-slate-300 text-sm md:text-base">
+                      {item.degree}
+                    </p>
+                  </div>
+                  <p className="text-slate-400 text-sm md:text-right shrink-0">
+                    {item.dates}
+                    <br />
+                    {item.grade}
+                  </p>
+                </div>
+                <p className="mt-4 text-slate-200 text-sm md:text-base leading-relaxed">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section> */}
       </div>
-      </section>
-
-      <section className="w-full">
-      <h1 className="heading-1 mb-3">Courses & skill improvement</h1>
-      <p className="subtitle md:mb-12 mb-4">
-        Online courses, tutorials, coding exercises and other resources for skill improvement.
-      </p>
-
-      <div className="flex flex-col gap-8 w-full">
-        {courses.map((item) => (
-          <article key={item.institution} className="card-glow backdrop-blur-sm rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8">
-            <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
-              <div>
-                <h2 className="heading-2 mb-1">{item.institution}</h2>
-                <p className="text-slate-300 text-sm md:text-base">{item.degree}</p>
-              </div>
-              <p className="text-slate-400 text-sm md:text-right shrink-0">
-                {item.dates}<br />{item.grade}
-              </p>
-            </div>
-            <p className="mt-4 text-slate-200 text-sm md:text-base leading-relaxed">
-              {item.description}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-    </div>
     </div>
   );
 }
