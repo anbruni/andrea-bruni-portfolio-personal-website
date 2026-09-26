@@ -11,6 +11,7 @@ const projects = [
       "Boulder Garage is an indoor bouldering gym opened by my brother in 2025 near Turin, offering over 300m² of climbable surface across a boulder area, circuit walls, a Kilterboard, a teaching wall, and a training zone. I built their official website from scratch — the gym's main digital presence, presenting facilities, courses for kids and adults, contact info, and an embedded Google Maps location.",
     stack: [
       'React',
+      'HTML',
       'Tailwind CSS',
       'CSS',
       'Vanilla JS',
@@ -65,35 +66,31 @@ const projects = [
     overlayDescription:
       'Helix converts natural-language campaign requirements into validated, previewed, and approval-gated operations.',
     overlayContent:
-      'Helix automates the creation and management of in-product campaigns through a safety-first, human-in-the-loop architecture. Users can describe campaign requirements in natural language, including content, audience targeting, scheduling, experimentation, and lifecycle changes. Helix translates those requests into typed operations, identifies missing information, resolves the required entities, and produces a deterministic preview before making any changes. LangGraph manages the complete workflow—clarification, resolution, validation, preview, approval, execution, and verification—while SQLite checkpointing allows interrupted sessions to resume safely. Model Context Protocol integrations connect the platform to campaign services, analytics systems, content platforms, knowledge bases, issue trackers, and observability tools. All write operations are performed through tested Python workflows rather than AI-generated code, providing predictable execution, human oversight, traceability, fail-closed validation, and an auditable history throughout the campaign lifecycle.',
-    overlayImage: 'public/helix-architecture.png',
-    overlayImage2: 'public/helix-campaign-workflow.png',
+      "Helix automates the creation and management of in-product campaigns through a safety-first, human-in-the-loop architecture. Users can describe campaign requirements in natural language, including content, audience targeting, scheduling, experimentation, and lifecycle changes. Helix translates those requests into typed operations, identifies missing information, resolves the required entities, and produces a deterministic preview before making any changes. LangGraph manages the complete workflow—clarification, resolution, validation, preview, approval, execution, and verification—while SQLite checkpointing allows interrupted sessions to resume safely.\n\nModel Context Protocol integrations connect the platform to campaign services, analytics systems, content platforms, knowledge bases, issue trackers, and observability tools. All write operations are performed through tested Python workflows rather than AI-generated code, providing predictable execution, human oversight, traceability, fail-closed validation, and an auditable history throughout the campaign lifecycle.",
   },
   {
-    title: 'Boulder Garage2',
+    title: 'Norton 360 for Windows - In-UI Store',
     tagline:
-      'Official website for a new indoor bouldering gym in Cumiana, Italy.',
+      'Official in-UI store for Norton 360 on Windows.',
     description:
-      "Built the full website for Boulder Garage, a bouldering gym opened by my brother in 2025 near Turin. The gym offers over 300m² of climbable surface across a boulder area, circuit walls, a Kilterboard, a teaching wall, and a training zone. The homepage features a full-screen automatic image carousel that cycles every 5 seconds. Designed with a mobile-first approach, the site is fully responsive across all screen sizes. It serves as the gym's main digital presence, presenting facilities, courses for kids and adults, contact info, and an embedded Google Maps location.",
+      "In my role at Gendigital, working in the Norton team, I developed the Norton 360 in-UI store for Windows, enabling users to seamlessly browse, purchase, and manage Norton products directly within the application. The experience was designed to feel like a natural extension of the Norton 360 ecosystem, featuring responsive layouts, intuitive navigation, and deep integration with existing product workflows.\n\nI was responsible for the entire project lifecycle, from design and architecture to development, implementation, and quality assurance. One of the main challenges was building a highly personalized experience capable of targeting individual components, offers, and promotional banners to specific user segments while maintaining a consistent and seamless user journey.\n\nAchieving this required careful planning, scalable targeting logic, and extensive testing to ensure reliability across a global user base. Today, the store is viewed by millions of users worldwide and has delivered outstanding business results, achieving an 85% increase in bookings during A/B testing.",
     stack: [
-      'React',
-      'Tailwind CSS',
       'CSS',
       'Vanilla JS',
-      'React Router',
-      'Netlify',
+      'HTML',
+      'Targeting analysis',
+      "MySQL",
+      "BigQuery",
+      "Power BI",
+      "QA test",
+      "AB Testing",
+      "Figma design"
     ],
-    liveUrl: 'https://www.bouldergarage.it/',
-    futureDevelopments: [
-      'Online booking system for courses and sessions',
-      'Automated news section connected to the Instagram feed — zero manual editorial effort',
-      'Customer area to view bookings and purchase memberships online',
-      'Dedicated photo gallery section to showcase the gym spaces and climbing areas',
-    ],
-    overlayTitle: 'Boulder Garage',
+    liveUrl: '',
+    futureDevelopments: [],
+    overlayTitle: 'Norton 360 for Windows - In-UI Store',
     overlayDescription:
-      'Official website for a new indoor bouldering gym in Cumiana (TO), Italy.',
-    overlayImage: 'public/boulder-garage-photo1.png',
+      'Official in-UI store for Norton 360 on Windows.',
   },
 ];
 

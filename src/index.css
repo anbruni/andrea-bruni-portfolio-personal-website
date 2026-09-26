@@ -32,11 +32,15 @@
 
   /* Buttons */
   .btn-primary {
-    @apply px-8 py-4 bg-french-blue text-white rounded-lg font-semibold hover:bg-french-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-french-blue-light focus:ring-offset-2;
+    @apply w-48 flex justify-center px-8 py-4 bg-french-blue text-white rounded-lg font-semibold hover:bg-french-blue-light transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-french-blue-light focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
+    @apply w-48 flex justify-center px-6 py-3 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 backdrop-blur-lg;
+  }
+
+  .btn-scroll {
+    @apply w-12 flex justify-center px-2 py-2 bg-transparent border-2 border-white text-white rounded-lg font-medium hover:bg-white hover:text-slate-900 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2;
   }
 
   /* Back / Navigation Buttons */

@@ -81,7 +81,7 @@ function ProjectCard({ title, tagline, description, stack, liveUrl = '', futureD
             <ProjectOverlay title={overlayTitle} description={overlayDescription} url={liveUrl} image={overlayImage} image2={overlayImage2} content={overlayContent} isHovered={isHovered} setIsHovered={setIsHovered} isClicked={isClicked} setIsClicked={setIsClicked} onMouseEnter={handleEnter} onMouseLeave={handleLeave} />
 
             {/* Description */}
-            <p className="text-slate-200 text-sm md:text-base leading-relaxed font-medium text-center w-full">
+            <p className="text-slate-200 text-sm md:text-base leading-relaxed font-medium text-justify w-full whitespace-pre-line">
                 {description}
             </p>
 
@@ -119,13 +119,13 @@ function ProjectCard({ title, tagline, description, stack, liveUrl = '', futureD
     );
 }
 
-function ProjectOverlay({ title, description, url, image, image2, content, isHovered, isClicked, setIsHovered, setIsClicked, onMouseEnter, onMouseLeave }) {
+function ProjectOverlay({ title, url, image, image2, content, isHovered, isClicked, setIsHovered, setIsClicked, onMouseEnter, onMouseLeave }) {
     const [lightboxSrc, setLightboxSrc] = useState(null);
     return (
         <>
         <ImageLightbox src={lightboxSrc} alt={title} onClose={() => setLightboxSrc(null)} />
         <div
-            className={`absolute -inset-4 z-10 bg-slate-900/95 backdrop-blur-md rounded-3xl flex flex-col p-5 md:p-8 gap-4 transition-all duration-300 ease-out ${isHovered || isClicked ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
+            className={`absolute -inset-4 z-10 bg-slate-900/95  rounded-3xl flex flex-col p-5 md:p-8 gap-4 transition-all duration-300 ease-out ${isHovered || isClicked ? 'opacity-100 scale-100 pointer-events-auto' : 'opacity-0 scale-95 pointer-events-none'
                 }`}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
@@ -146,7 +146,7 @@ function ProjectOverlay({ title, description, url, image, image2, content, isHov
                     <div className="h-52 md:flex-1 rounded-xl overflow-hidden bg-white/10 border border-white/10 flex items-center justify-center min-h-0 cursor-zoom-in" onClick={(e) => { e.stopPropagation(); setLightboxSrc(image); }}>
                         {image
                             ? <img src={image} alt={title} className="w-full h-full object-cover object-top pointer-events-none" />
-                            : <span className="text-slate-500 text-xs tracking-widest uppercase">Preview</span>
+                            : <span className="text-slate-500 text-xs tracking-widest uppercase">Screenshot not added yet</span>
                         }
                     </div>
                     {image2 && (
