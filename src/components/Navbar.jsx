@@ -9,11 +9,12 @@ function Navbar() {
   const location = useLocation();
   return (
     <nav className="px-8 py-6 flex justify-between items-center relative z-50">
-      <div className="text-xl font-bold text-white font-heading">Andrea Bruni</div>
-
+      <div className="text-xl font-bold text-white font-heading">
+        Andrea Bruni
+      </div>
 
       <div className="hidden md:flex gap-6">
-        {location.pathname === "/" ? null : (
+        {location.pathname === '/' ? null : (
           <Link to="/" className="hidden md:flex nav-link">
             Home
           </Link>
@@ -27,19 +28,33 @@ function Navbar() {
         <Link to="/courses-education" className="nav-link">
           Courses & Education
         </Link>
-        <a href="/cv.html" target="_blank" rel="noopener noreferrer" className="nav-link">
+        <Link to="/passions-hobbies" className="nav-link">
+          Passions & Hobbies
+        </Link>
+        <a
+          href="/cv.html"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nav-link"
+        >
           Download
         </a>
       </div>
       <button
         className="md:hidden text-white focus:outline-none"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label={
+          isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'
+        }
+        aria-expanded={isMenuOpen}
+        aria-controls="mobile-navigation"
       >
         {!isMenuOpen && <Menu size={24} />}
       </button>
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             className="absolute top-0 right-0 bg-white rounded-bl-3xl shadow-lg p-6 flex flex-col gap-4 md:hidden w-64 h-fit w-fit z-50"
             initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
@@ -54,17 +69,26 @@ function Navbar() {
                 <X size={24} />
               </button>
             </div>
-            <Link to="/contacts"
+            <Link
+              to="/contacts"
               className="nav-link-mobile"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
-            <Link to="/work-projects"
+            <Link
+              to="/work-projects"
               className="nav-link-mobile"
               onClick={() => setIsMenuOpen(false)}
             >
               Work & Projects
+            </Link>
+            <Link
+              to="/passions-hobbies"
+              className="nav-link-mobile"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Passions & Hobbies
             </Link>
             <Link
               to="/courses-education"
