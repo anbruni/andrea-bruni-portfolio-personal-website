@@ -25,10 +25,6 @@ const COUNTRIES = [
   ['ES', 'Spain'],
 ];
 
-// const PROVIDERS = await fetchProviders(initialCountry).then((results) => results.map((result) => [String(result.provider_id), result.provider_name]));
-
-//and how do I get the country/initialCountry from Movies.jsx?
-
 
 const inputClassName =
   'w-full rounded-xl border border-white/15 bg-slate-950/60 px-4 py-3 text-slate-100 outline-none transition focus:border-french-blue-light focus:ring-2 focus:ring-french-blue-light/30';
@@ -68,7 +64,6 @@ const [providers, setProviders] = useState([]);
   useEffect(() => {
     const loadProviders = async () => {
       const results = await fetchProviders(initialCountry);
-      console.log(results);
 
       const providerOptions = results.map((provider) => [
         String(provider.provider_id),
