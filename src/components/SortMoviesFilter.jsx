@@ -17,10 +17,17 @@ const SortMoviesFilter = ({ onSort }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="rounded-xl border border-white/15 bg-slate-800 px-4 py-3 text-sm font-semibold text-slate-200 transition hover:border-french-blue-light hover:text-white"
       >
-        Sort by: {selectedOption || 'Select'}
+        Sort by: {selectedOption || 'Any'}
       </button>
       {isOpen && (
         <div className="absolute z-20 mt-2 min-w-full overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+          <button
+            type="button"
+            onClick={() => handleOptionClick('')}
+            className="block w-full p-2 text-left text-slate-800 hover:bg-slate-100"
+          >
+            Any
+          </button>
           <button
             type="button"
             onClick={() => handleOptionClick('popularity')}

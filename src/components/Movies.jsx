@@ -1,22 +1,29 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, useRef } from 'react';
 import { fetchMovies, fetchWatchProviders } from '../services/tmdbApi';
+import { fetchCountries } from '../services/tmdbApiCountries';
 import { getUserGeoData } from '../services/ipGeoLocation';
-import FavouriteMovieCard from './FavouriteMovieCard';
 import FormMoviesSearch from './FormMoviesSearch';
 import Expander from './Expander';
+import ScrollPages from './ScrollPages';
 
 const GEO_COUNTRY_KEY = 'user-country';
+const TMDB_MAX_PAGES = 500;
 
 const Movies = () => {
-  const [country, setCountry] = useState(
+  const [selectedCountryCode, setSelectedCountryCode] = useState(
     () => localStorage.getItem(GEO_COUNTRY_KEY) || 'IT'
   );
+  const [countries, setCountries] = useState([]);
+
+  const [page, setPage] = useState(1);
   const [movies, setMovies] = useState([]);
+  const [moviesError, setMoviesError] = useState('');
+  const [totalPages, setTotalPages] = useState(0);
   const [watchProviders, setWatchProviders] = useState({});
   const [search, setSearch] = useState({
     mode: 'discover',
-    country: 'US',
-    sortOption: 'popularity',
+    country: '',
+    sortOption: '',
   });
 
   const providers = [
@@ -35,8 +42,7 @@ const Movies = () => {
 
         if (countryCode) {
           localStorage.setItem(GEO_COUNTRY_KEY, countryCode);
-          setCountry(countryCode);
-          setSearch((current) => ({ ...current, country: countryCode }));
+          setSelectedCountryCode(countryCode);
         }
       } catch (error) {
         console.error('Unable to determine user country:', error);
@@ -47,14 +53,44 @@ const Movies = () => {
   }, []);
 
   useEffect(() => {
+    const loadCountries = async () => {
+      const results = await fetchCountries();
+
+      const countryOptions = results.map((country) => {
+        return [String(country.iso_3166_1), country.english_name];
+      });
+
+      setCountries(countryOptions);
+    };
+
+    loadCountries();
+  }, []);
+
+  const effectiveCountryCode = search.country || selectedCountryCode;
+  const selectedCountryName =
+  countries.find((item) => item[0] === effectiveCountryCode)?.[1]
+  ?? effectiveCountryCode;
+
+  useEffect(() => {
     const fetchMoviesData = async () => {
-      const moviesData = await fetchMovies(search);
-      setMovies(moviesData);
-      setWatchProviders({});
+      setMoviesError('');
+
+      try {
+        const moviesDataResponse = await fetchMovies({ ...search, page });
+        setMovies(moviesDataResponse.results ?? []);
+        setTotalPages(moviesDataResponse.total_pages ?? 0);
+        setWatchProviders({});
+      } catch (error) {
+        console.error('Failed to fetch movies data:', error);
+        setMoviesError('Unable to load movies. Please try again.');
+        setMovies([]);
+        setTotalPages(0);
+        setWatchProviders({});
+      }
     };
 
     fetchMoviesData();
-  }, [search]);
+  }, [search, page]);
 
   useEffect(() => {
     if (!movies.length) return;
@@ -90,21 +126,33 @@ const Movies = () => {
   }, [movies, search.sortOption]);
 
   const handleSearch = (filters) => {
-    const selectedCountry = filters.country || country;
-    setCountry(selectedCountry);
+    const selectedCountry = filters.country || selectedCountryCode;
+    setSelectedCountryCode(selectedCountry);
+    setPage(1);
     setSearch(filters);
   };
+  const movieRef = useRef(null);
 
   return (
-    <div className="movies-list flex flex-col gap-12 items-center">
-      <FormMoviesSearch onSearch={handleSearch} initialCountry={country} />
-      <FavouriteMovieCard />
-      <h1 className="heading-2">Movies</h1>
+    <div className="movies-list flex flex-col items-center gap-12">
+      <FormMoviesSearch onSearch={handleSearch} countryList={countries} initialCountry={selectedCountryCode} />
+      <h1 ref={movieRef} className="heading-2">
+        Movies
+      </h1>
+
+      {moviesError && (
+        <p
+          role="alert"
+          className="w-full max-w-5xl rounded-xl border border-rose-400/30 bg-rose-950/60 px-5 py-4 text-rose-200"
+        >
+          {moviesError}
+        </p>
+      )}
 
       <div className="flex flex-col gap-4 md:gap-8 max-w-5xl">
         {sortedMovies.map((movie) => {
           const providersByCountry =
-            watchProviders[movie.id]?.[search.country || country] || {};
+            watchProviders[movie.id]?.[search.country || selectedCountryCode] || {};
 
           return (
             <article
@@ -156,7 +204,7 @@ const Movies = () => {
                             0 && (
                             <section key={providerType}>
                               <h3 className="mb-2 font-semibold">
-                                {label} in {search.country || country}
+                                {label} in {selectedCountryName || search.country}
                               </h3>
                               <div className="inline-flex min-h-6 gap-3">
                                 {(providersByCountry[providerType] || []).map(
@@ -198,6 +246,9 @@ const Movies = () => {
           );
         })}
       </div>
+      {totalPages && (
+        <ScrollPages totalPages={totalPages} maxPages={TMDB_MAX_PAGES} page={page} setPage={setPage} scrollTopRef={movieRef} />
+      )}
     </div>
   );
 };
