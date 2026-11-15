@@ -15,9 +15,16 @@ dist-ssr
 # CV source files (local only, not for deployment)
 andrea-bruni-cv/
 
+# Tailored CVs and cover letters (local drafts only)
+/private-career-material/
+
 # Plans and future improvements, not for deployment
 plans-portfolio/
 .playwright-mcp/
+
+# Environment variables
+.env
+.env.local
 
 # Editor directories and files
 .vscode/*

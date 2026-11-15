@@ -38,7 +38,7 @@ const projects = [
     tagline:
       'A human-in-the-loop AI platform for creating, managing, and optimizing the complete lifecycle of in-product campaigns.',
     description:
-      'Helix is an AI-augmented automation platform designed to simplify in-product campaign creation and lifecycle management. It transforms natural-language requests into deterministic, multi-step workflows for campaign setup, audience targeting, content configuration, experimentation, validation, and maintenance. Every sensitive operation includes dry-run previews, explicit human approval, auditability, and post-execution verification.',
+      'Developed in my role at Gendigital/Norton, Helix is an AI-augmented automation platform designed to simplify in-product campaign creation and lifecycle management. It transforms natural-language requests into deterministic, multi-step workflows for campaign setup, audience targeting, content configuration, experimentation, validation, and maintenance. Every sensitive operation includes dry-run previews, explicit human approval, auditability, and post-execution verification.',
     stack: [
       'Python',
       'LangGraph',
@@ -50,6 +50,9 @@ const projects = [
       'PostgreSQL',
       'OpenSearch',
       'Cursor',
+      'Claude',
+      'Gemini',
+      'GitHub Copilot',
       'Pytest',
     ],
     liveUrl: '',
@@ -66,7 +69,7 @@ const projects = [
     overlayDescription:
       'Helix converts natural-language campaign requirements into validated, previewed, and approval-gated operations.',
     overlayContent:
-      "Helix automates the creation and management of in-product campaigns through a safety-first, human-in-the-loop architecture. Users can describe campaign requirements in natural language, including content, audience targeting, scheduling, experimentation, and lifecycle changes. Helix translates those requests into typed operations, identifies missing information, resolves the required entities, and produces a deterministic preview before making any changes. LangGraph manages the complete workflow—clarification, resolution, validation, preview, approval, execution, and verification—while SQLite checkpointing allows interrupted sessions to resume safely.\n\nModel Context Protocol integrations connect the platform to campaign services, analytics systems, content platforms, knowledge bases, issue trackers, and observability tools. All write operations are performed through tested Python workflows rather than AI-generated code, providing predictable execution, human oversight, traceability, fail-closed validation, and an auditable history throughout the campaign lifecycle.",
+      "Developed in my role at Gendigital/Norton as part of the effort to automate, speedup and improve in-product campaign management, Helix automates the creation and management of in-product campaigns through a safety-first, human-in-the-loop architecture. Users can describe campaign requirements in natural language, including content, audience targeting, scheduling, experimentation, and lifecycle changes. Helix translates those requests into typed operations, identifies missing information, resolves the required entities, and produces a deterministic preview before making any changes. LangGraph manages the complete workflow—clarification, resolution, validation, preview, approval, execution, and verification—while SQLite checkpointing allows interrupted sessions to resume safely.\n\nModel Context Protocol integrations connect the platform to campaign services, analytics systems, content platforms, knowledge bases, issue trackers, and observability tools. All write operations are performed through tested Python workflows rather than AI-generated code, providing predictable execution, human oversight, traceability, fail-closed validation, and an auditable history throughout the campaign lifecycle.",
   },
   {
     title: 'Norton 360 for Windows - In-UI Store',
